@@ -9,15 +9,15 @@
                 <div class="card-body">
                     <form>
                         <div class="mb-3 row">
-                            <label for="username" class="col-sm-4 col-form-label">Username:</label>
+                            <label for="name" class="col-sm-4 col-form-label">Name:</label>
                             <div class="col-sm-8">
-                                <p id="username">Người Dùng 1</p>
+                                <p id="name">{{ $user->name }}</p>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="email" class="col-sm-4 col-form-label">Email:</label>
                             <div class="col-sm-8">
-                                <p id="email">user1@example.com</p>
+                                <p id="email">{{ $user->email }}</p>
                             </div>
                         </div>
 
