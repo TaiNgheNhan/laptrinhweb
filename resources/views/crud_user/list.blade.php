@@ -1,5 +1,6 @@
 @extends('dashboard')
 @section('content')
+
     <!-- Danh sách người dùng trong một card -->
     <div class="container mt-5">
         <div class="card">
@@ -76,4 +77,7 @@
                 </li>
             </ul>
         </nav>
-@endsection
+
+
+
+    @endsection

@@ -1,5 +1,6 @@
+
   @extends('dashboard')
-  @section('content')
+@section('content')
   <!-- Form Đăng Nhập -->
   <div class="container mt-5">
     <div class="row justify-content-center">
@@ -42,5 +43,6 @@
       </div>
     </div>
   </div>
-@endsection
+  @endsection
+  
 

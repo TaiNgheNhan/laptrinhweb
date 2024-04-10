@@ -28,11 +28,11 @@ class CrudUserController extends Controller
     public function authUser(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
@@ -56,7 +56,7 @@ class CrudUserController extends Controller
     public function postUser(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password_confirmation' => 'required_with:password|same:password|min:6',
             'password' => 'required|min:6',
