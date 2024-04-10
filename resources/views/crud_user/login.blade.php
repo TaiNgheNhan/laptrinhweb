@@ -1,6 +1,5 @@
-
-  @extends('dashboard')
-@section('content')
+@extends('dashboard')
+  @section('content')
   <!-- Form Đăng Nhập -->
   <div class="container mt-5">
     <div class="row justify-content-center">
@@ -8,17 +7,24 @@
         <div class="card">
           <h5 class="card-header text-center">Đăng Nhập</h5>
           <div class="card-body">
-            <form>
+            <form action="{{ route('user.authUser') }}" method="post">
+              @csrf
               <div class="mb-3 row">
-                <label for="username" class="col-sm-4 col-form-label">Tên đăng nhập:</label>
+                <label for="name" class="col-sm-4 col-form-label">Tên đăng nhập:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="username" placeholder="">
+                  <input type="text" class="form-control"  name="name" id="name" placeholder="">
+                  @if ($errors->has('name'))
+                  <span class="text-danger">{{ $errors->first('name') }}</span>
+                  @endif
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="password" class="col-sm-4 col-form-label">Mật khẩu:</label>
                 <div class="col-sm-8">
-                  <input type="password" class="form-control" id="password" placeholder="">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="">
+                  @if ($errors->has('password'))
+                  <span class="text-danger">{{ $errors->first('password') }}</span>
+                  @endif
                 </div>
               </div>
               <div class="mb-3 row">
@@ -44,5 +50,3 @@
     </div>
   </div>
   @endsection
-  
-
