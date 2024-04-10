@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Người Dùng</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container d-flex justify-content-center align-items-center">
-        <a class="navbar-brand" href="#">Home</a>
-        <span class="mx-2">|</span>
-        <a class="nav-link" href="#">Đăng Xuất</a>
-    </div>
-</nav>
-
-
-
-
-
+@extends('dashboard')
+@section('content')
     <!-- Danh sách người dùng trong một card -->
     <div class="container mt-5">
         <div class="card">
@@ -99,20 +76,4 @@
                 </li>
             </ul>
         </nav>
-
-
-        <footer class="footer bg-light py-3">
-            <div class="container text-center">
-                <span>© 2024 Trang Cập Nhật Thông Tin</span>
-            </div>
-        </footer>
-    </div>
-
-
-    <!-- Bootstrap JS và Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+@endsection
