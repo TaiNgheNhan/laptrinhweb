@@ -28,11 +28,11 @@ class CrudUserController extends Controller
     public function authUser(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
@@ -56,9 +56,11 @@ class CrudUserController extends Controller
     public function postUser(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'password_confirmation' => 'required_with:password|same:password',
+
         ]);
 
         $data = $request->all();
@@ -78,7 +80,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
-        return view('crud_user.read', ['messi' => $user]);
+        return view('crud_user.read', ['user' => $user]);
     }
 
     /**
@@ -111,8 +113,10 @@ class CrudUserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,id,'.$input['id'],
+            'email' => 'required|email|unique:users,email,'.$input['id'],
             'password' => 'required|min:6',
+            'password_confirmation' => 'required_with:password|same:password',
+
         ]);
 
        $user = User::find($input['id']);
