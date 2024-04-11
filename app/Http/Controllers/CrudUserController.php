@@ -58,8 +58,9 @@ class CrudUserController extends Controller
         $request->validate([
             'name' => 'required|unique:users',
             'email' => 'required|email|unique:users',
-            'password_confirmation' => 'required_with:password|same:password',
             'password' => 'required|min:6',
+            'password_confirmation' => 'required_with:password|same:password',
+
         ]);
 
         $data = $request->all();
@@ -112,8 +113,10 @@ class CrudUserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,id,'.$input['id'],
+            'email' => 'required|email|unique:users,email,'.$input['id'],
             'password' => 'required|min:6',
+            'password_confirmation' => 'required_with:password|same:password',
+
         ]);
 
        $user = User::find($input['id']);
