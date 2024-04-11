@@ -1,6 +1,6 @@
 @extends('dashboard')
 @section('content')
-<!-- Danh sách người dùng trong một card -->
+
 <div class="container mt-5">
     <div class="card">
         <div class="card-body">
@@ -30,14 +30,15 @@
                         @endforeach
                     </tbody>
                 </table>
+                
             </div>
         </div>
     </div>
 </div>
 
-
+<!-- 
 <div class="bottom fixed-bottom">
-    <!-- Thanh điều hướng trang -->
+     Thanh điều hướng trang 
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -56,5 +57,5 @@
                 </a>
             </li>
         </ul>
-    </nav>
+</nav> -->
     @endsection

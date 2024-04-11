@@ -22,7 +22,7 @@
             <div class="mb-3 row">
               <label for="password" class="col-sm-4 col-form-label">Mật khẩu mới:</label>
               <div class="col-sm-8">
-                <input type="password" class="form-control" name="password" id="password" placeholder="">
+                <input type="password" class="form-control" name="password" id="password" placeholder="" >
                 @if ($errors->has('password'))
                 <span class="text-danger">{{ $errors->first('password') }}</span>
                 @endif
@@ -31,7 +31,7 @@
             <div class="mb-3 row">
               <label for="password_confirmation" class="col-sm-4 col-form-label">Nhập lại mật khẩu mới:</label>
               <div class="col-sm-8">
-                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="">
+                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="" >
                 @if ($errors->has('password_confirmation'))
                 <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                 @endif

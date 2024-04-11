@@ -24,7 +24,7 @@
                         <div class="mb-3 row">
                             <div class="col-sm-4"></div>
                             <div class="col-sm-8 text-end">
-                                <a href="#" class="btn btn-primary">Chỉnh Sửa</a>
+                                <a href="{{ route('user.updateUser', ['id' => $user->id]) }}"  class="btn btn-primary">Edit</a> |
                             </div>
                         </div>
                     </form>
