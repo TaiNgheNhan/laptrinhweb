@@ -47,9 +47,10 @@
             </div>
             <div class="mb-3 row">
               <div class="col-sm-8 offset-sm-4 text-end">
-                <a href="login.html">Đã có tài khoản?</a>
+                <a href="{{ route('login') }}">Đã có tài khoản? Đăng nhập ngay!</a>
                 <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
               </div>
+
             </div>
           </form>
         </div>
